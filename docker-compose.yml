@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # RAG Application
+  rag-app:
+    build: .
+    container_name: chat_with_docs_rag
+    ports:
+      - "8000:8000"  # FastAPI
+      - "8501:8501"  # Streamlit
+    volumes:
+      - ./data:/app/data
+      - ./vector_store:/app/vector_store
+      - ./logs:/app/logs
+    environment:
+      - LLM_TYPE=ollama
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=mistral
+      - LOG_LEVEL=INFO
+    depends_on:
+      - ollama
+    networks:
+      - rag-network
+    restart: unless-stopped
+
+  # Ollama LLM Service (optional)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama_llm
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    environment:
+      - OLLAMA_NUM_PARALLEL=1
+    networks:
+      - rag-network
+    restart: unless-stopped
+    # Uncomment to auto-pull model on startup
+    # command: ollama pull mistral
+
+volumes:
+  ollama-data:
+    driver: local
+
+networks:
+  rag-network:
+    driver: bridge

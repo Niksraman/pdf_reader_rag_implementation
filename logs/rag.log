@@ -1,0 +1,64 @@
+2026-01-20 16:21:31 - text_processor - INFO - Initialized TextProcessor with chunk_size=500, overlap=100
+2026-01-20 16:21:31 - embedding - ERROR - Error initializing embeddings: Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.
+2026-01-20 17:25:42 - text_processor - INFO - Initialized TextProcessor with chunk_size=500, overlap=100
+2026-01-20 17:25:45 - embedding - ERROR - Error initializing embeddings: Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.
+2026-01-20 17:25:57 - text_processor - INFO - Initialized TextProcessor with chunk_size=500, overlap=100
+2026-01-20 17:25:57 - embedding - ERROR - Error initializing embeddings: Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.
+2026-01-20 17:26:27 - text_processor - INFO - Initialized TextProcessor with chunk_size=500, overlap=100
+2026-01-20 17:26:27 - embedding - ERROR - Error initializing embeddings: Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.
+2026-01-20 17:33:59 - text_processor - INFO - Initialized TextProcessor with chunk_size=500, overlap=100
+2026-01-20 17:34:05 - embedding - ERROR - Error initializing embeddings: Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.
+2026-01-20 17:35:32 - text_processor - INFO - Initialized TextProcessor with chunk_size=500, overlap=100
+2026-01-20 17:36:01 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-20 17:36:01 - embedding - INFO - Initialized VectorStore
+2026-01-20 17:36:01 - __main__ - INFO - Initialized IngestionPipeline
+2026-01-20 17:36:01 - __main__ - INFO - Starting ingestion from directory: data/
+2026-01-20 17:36:01 - document_loader - INFO - Found 0 files with extension .pdf
+2026-01-20 17:36:01 - document_loader - INFO - Found 3 files with extension .txt
+2026-01-20 17:36:01 - document_loader - INFO - Loaded 1 pages from sample_document.txt
+2026-01-20 17:36:01 - document_loader - INFO - Loaded 1 pages from python_guide.txt
+2026-01-20 17:36:01 - document_loader - INFO - Loaded 1 pages from ml_fundamentals.txt
+2026-01-20 17:36:01 - document_loader - INFO - Found 0 files with extension .md
+2026-01-20 17:36:01 - document_loader - INFO - Total documents loaded: 3
+2026-01-20 17:36:01 - text_processor - INFO - Split 3 documents into 41 chunks
+2026-01-20 17:36:04 - embedding - INFO - Generated embeddings for 41 documents
+2026-01-20 17:36:04 - embedding - INFO - Created FAISS index with 41 vectors of dimension 384
+2026-01-20 17:36:04 - embedding - INFO - Saved vector store to /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-20 17:36:04 - embedding - INFO - Saved metadata to /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-20 17:36:04 - __main__ - INFO - Ingestion pipeline completed successfully
+2026-01-20 17:37:24 - app - INFO - Processing question: What is the main topic?
+2026-01-20 17:37:32 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-20 17:37:32 - embedding - INFO - Initialized VectorStore
+2026-01-20 17:37:32 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-20 17:37:32 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-20 17:37:32 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-20 17:37:32 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-20 17:37:32 - embedding - INFO - Search returned 3 results
+2026-01-20 17:37:32 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 17:37:32 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 17:37:32 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 17:37:32 - app - INFO - Generated answer (24 chars) with 3 sources
+2026-01-20 17:37:51 - app - INFO - Processing question: what is machine learning
+2026-01-20 17:37:51 - embedding - INFO - Search returned 3 results
+2026-01-20 17:37:51 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 17:37:51 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 17:37:51 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 17:37:51 - app - INFO - Generated answer (24 chars) with 3 sources
+2026-01-20 17:38:31 - app - INFO - Processing question: what is machine learning
+2026-01-20 17:38:31 - embedding - INFO - Search returned 2 results
+2026-01-20 17:38:31 - retrieval - INFO - Retrieved 2 documents for query
+2026-01-20 17:38:31 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 17:38:31 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 17:38:31 - app - INFO - Generated answer (24 chars) with 2 sources
+2026-01-20 17:38:48 - app - INFO - Processing question: what is machine learning
+2026-01-20 17:38:48 - embedding - INFO - Search returned 10 results
+2026-01-20 17:38:48 - retrieval - INFO - Retrieved 10 documents for query
+2026-01-20 17:38:48 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 17:38:48 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 17:38:48 - app - INFO - Generated answer (24 chars) with 10 sources
+2026-01-20 17:41:27 - app - INFO - Processing question: Can you summarize the key points?
+2026-01-20 17:41:27 - embedding - INFO - Search returned 3 results
+2026-01-20 17:41:27 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 17:41:27 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 17:41:27 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 17:41:27 - app - INFO - Generated answer (24 chars) with 3 sources
