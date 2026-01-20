@@ -38,7 +38,7 @@ def demo_basic_usage():
         
         try:
             documents = vector_store.load()
-            print(f"✓ Found {len(documents)} documents in vector store")
+            print(f"Found {len(documents)} documents in vector store")
             print("\nDocuments in index:")
             for i, doc in enumerate(documents[:5], 1):
                 preview = doc.page_content[:100].replace('\n', ' ')
@@ -46,7 +46,7 @@ def demo_basic_usage():
             if len(documents) > 5:
                 print(f"  ... and {len(documents) - 5} more documents")
         except Exception as e:
-            print(f"✗ No documents found. Ingesting sample documents...")
+            print(f"No documents found. Ingesting sample documents...")
             print("\nTo ingest documents, run:")
             print("  python ingest.py --source data/")
             return
@@ -61,7 +61,7 @@ def demo_basic_usage():
         retriever.load_index()
         
         results = retriever.retrieve(question, top_k=3)
-        print(f"✓ Retrieved {len(results)} relevant documents:\n")
+        print(f"Retrieved {len(results)} relevant documents:\n")
         
         for i, result in enumerate(results, 1):
             preview = result['content'][:150].replace('\n', ' ')
@@ -75,7 +75,7 @@ def demo_basic_usage():
             import requests
             try:
                 requests.get("http://localhost:11434/api/tags", timeout=2)
-                print("✓ Ollama is running\n")
+                print("Ollama is running\n")
                 
                 # Generate answer using LLM
                 print(f"Question: {question}\n")
@@ -85,7 +85,7 @@ def demo_basic_usage():
                 print(f"\nAnswer:\n{answer}\n")
                 
             except requests.ConnectionError:
-                print("⚠ Ollama is not running. Showing retrieval-only results:\n")
+                print("Ollama is not running. Showing retrieval-only results:\n")
                 print(f"Question: {question}\n")
                 context = "\n\n".join([r['content'][:200] for r in results])
                 print(f"Retrieved Context:\n{context}\n")
@@ -95,7 +95,7 @@ def demo_basic_usage():
                 print("  3. In another terminal: ollama pull mistral")
                 
         except Exception as e:
-            print(f"⚠ Could not generate answer: {e}")
+            print(f"Could not generate answer: {e}")
             print("Showing retrieved documents as fallback.\n")
         
         # Step 4: Try more questions
@@ -130,12 +130,12 @@ def demo_basic_usage():
         print("\n")
         
     except ImportError as e:
-        print(f"✗ Import Error: {e}")
+        print(f"Import Error: {e}")
         print("\nMake sure all dependencies are installed:")
         print("  pip install -r requirements.txt")
         sys.exit(1)
     except Exception as e:
-        print(f"✗ Error: {e}")
+        print(f"Error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

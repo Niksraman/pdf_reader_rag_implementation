@@ -62,3 +62,9 @@
 2026-01-20 17:41:27 - llm - INFO - Initialized OllamaProvider with model: mistral
 2026-01-20 17:41:27 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
 2026-01-20 17:41:27 - app - INFO - Generated answer (24 chars) with 3 sources
+2026-01-20 17:47:51 - app - INFO - Processing question: what is machine learning
+2026-01-20 17:47:51 - embedding - INFO - Search returned 3 results
+2026-01-20 17:47:51 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 17:47:51 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 17:47:51 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 17:47:51 - app - INFO - Generated answer (24 chars) with 3 sources
