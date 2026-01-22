@@ -1,17 +1,17 @@
 # Chat With Your Docs - RAG System
 
-A production-ready Retrieval-Augmented Generation (RAG) system for answering questions about document collections. Built with modular Python code, featuring FastAPI backend, Streamlit frontend, and support for multiple LLM providers.
+A professional Retrieval-Augmented Generation (RAG) system for answering questions about document collections. Built with modular Python code, featuring a FastAPI backend, professional Streamlit frontend, and HuggingFace LLM integration.
 
 ## 🎯 Features
 
 - **📄 Multi-format Document Support**: PDF, TXT, and Markdown files
-- **🔍 Semantic Search**: Uses FAISS for efficient vector similarity search
-- **🤖 Multiple LLM Providers**: Ollama, OpenAI, HuggingFace transformers
+- **🔍 Semantic Search**: FAISS-based efficient vector similarity search
+- **🤖 LLM Integration**: HuggingFace (default), with support for OpenAI and Ollama
 - **⚡ Fast Retrieval**: Real-time document search with embeddings
 - **📊 Source Attribution**: See exactly which documents answer your question
-- **🏗️ Modular Architecture**: Clean separation of concerns
-- **🔄 Easy Integration**: RESTful API with comprehensive documentation
-- **📝 Production-Ready**: Logging, error handling, and configuration management
+- **🎨 Professional UI**: Modern Streamlit interface with custom styling
+- **📚 RESTful API**: Comprehensive FastAPI backend with Swagger documentation
+- **🔐 Production-Ready**: Error handling, logging, and configuration management
 
 ## 📋 Project Structure
 
@@ -41,10 +41,6 @@ pdf_reader_rag_implementation/
 # Clone the repository
 cd pdf_reader_rag_implementation
 
-# Create virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
 # Install dependencies
 pip install -r requirements.txt
 ```
@@ -54,44 +50,44 @@ pip install -r requirements.txt
 Place your documents in the `data/` directory:
 
 ```bash
-# Create data directory if it doesn't exist
-mkdir -p data
-
-# Add your PDF, TXT, or Markdown files
+# Documents in data/ directory are automatically loaded
+# Supports: .pdf, .txt, .md files
 cp /path/to/your/documents/*.pdf data/
 ```
 
-### 3. Ingest Documents
+### 3. Start Both Services (Recommended)
 
 ```bash
-# Ingest all documents from data directory
-python ingest.py --source data/
+# Terminal 1: Start FastAPI backend (port 8000)
+python app.py
 
-# Or ingest a specific file
-python ingest.py --file data/document.pdf
+# Terminal 2: Start Streamlit UI (port 8501)
+streamlit run ui.py --server.port 8501 --server.address 0.0.0.0
 ```
 
-### 4. Start the API Server
+### 4. Access the Application
 
-```bash
-# Terminal 1: Start FastAPI server
-python -m uvicorn app:app --host 127.0.0.1 --port 8000 --reload
-```
-
-### 5. Start the Frontend
-
-```bash
-# Terminal 2: Start Streamlit UI
-streamlit run ui.py --server.port 8501
-```
-
-### 6. Use the Application
-
-Open your browser and navigate to:
-- **UI**: http://localhost:8501
+- **Web UI**: http://localhost:8501
 - **API Docs**: http://localhost:8000/docs
+- **Health Check**: http://localhost:8000/health
+
+### 5. Upload and Chat
+
+1. Go to the Streamlit UI (http://localhost:8501)
+2. Upload documents from the sidebar (PDF, TXT, or Markdown)
+3. Click **💾 Save Files** then **🚀 Ingest**
+4. Ask questions in the main area
+5. View answers with source references
 
 ## 🔧 Configuration
+
+### Default Configuration
+
+The system is configured to use **HuggingFace LLM (distilgpt2)** by default, which:
+- ✅ Works out-of-the-box without external services
+- ✅ Runs locally on CPU
+- ✅ Requires no API keys
+- ✅ Automatically downloads the lightweight model
 
 Edit `config.py` to customize:
 
@@ -104,50 +100,64 @@ CHUNK_SIZE = 500
 CHUNK_OVERLAP = 100
 TOP_K_RESULTS = 3
 
-# LLM Provider (ollama, openai, huggingface)
-LLM_TYPE = "ollama"
-OLLAMA_MODEL = "mistral"
+# LLM Provider (default: huggingface)
+LLM_TYPE = "huggingface"  # or "openai", "ollama"
 ```
 
-Or set environment variables:
+### Environment Variables
 
 ```bash
+# Change LLM provider
 export LLM_TYPE=openai
-export OPENAI_API_KEY=your-api-key
+export OPENAI_API_KEY=sk-your-key-here
+
+# Or use Ollama
+export LLM_TYPE=ollama
+export OLLAMA_BASE_URL=http://localhost:11434
 export OLLAMA_MODEL=mistral
 ```
 
 ## 🧠 LLM Providers
 
-### Ollama (Local, Free)
+### HuggingFace (Default, Recommended)
 
-```bash
-# Install Ollama
-# https://ollama.ai
-
-# Pull a model
-ollama pull mistral
-
-# Start Ollama server
-ollama serve
-
-# Configure in app
-LLM_TYPE = "ollama"
-OLLAMA_MODEL = "mistral"
-```
-
-### OpenAI (Cloud-based)
-
-```bash
-export OPENAI_API_KEY=sk-...
-export LLM_TYPE=openai
-```
-
-### HuggingFace (Local, with transformers)
+- **Best For**: Out-of-the-box usage, no API keys needed
+- **Model**: distilgpt2 (lightweight, ~300MB)
+- **Pros**: Free, local, privacy-friendly, no external dependencies
+- **Cons**: Less powerful than enterprise models
 
 ```bash
 export LLM_TYPE=huggingface
-# Downloads large models automatically
+# No additional setup needed!
+```
+
+### OpenAI (Enterprise-Grade)
+
+- **Best For**: Production applications, highest quality answers
+- **Model**: gpt-3.5-turbo (default)
+- **Pros**: Powerful, reliable, supports multiple models
+- **Cons**: Requires API key and payment
+
+```bash
+export LLM_TYPE=openai
+export OPENAI_API_KEY=sk-your-api-key
+```
+
+### Ollama (Self-Hosted)
+
+- **Best For**: Privacy-focused, custom models
+- **Model**: mistral (default)
+- **Pros**: Open-source, local, customizable
+- **Cons**: Requires additional installation and setup
+
+```bash
+# Install Ollama: https://ollama.ai
+ollama pull mistral
+ollama serve
+
+# Configure
+export LLM_TYPE=ollama
+export OLLAMA_BASE_URL=http://localhost:11434
 ```
 
 ## 📚 API Endpoints
@@ -184,6 +194,15 @@ curl -X POST http://localhost:8000/ingest/sync \
 
 ## 💻 Usage Examples
 
+### Web UI
+
+Simply upload documents and ask questions through the professional Streamlit interface:
+
+1. Upload documents from the sidebar
+2. Click **Ingest** to process documents
+3. Ask questions in the main chat area
+4. Review answers with source citations
+
 ### Python API
 
 ```python
@@ -191,7 +210,7 @@ from retrieval import search_docs
 from llm import generate_answer
 
 # Search documents
-query = "What is the main topic?"
+query = "What is machine learning?"
 documents = search_docs(query, top_k=3)
 
 # Generate answer
@@ -199,129 +218,135 @@ answer = generate_answer(query, documents)
 print(answer)
 ```
 
-### Ingest Documents Programmatically
+### REST API
 
-```python
-from ingest import ingest_documents
+```bash
+# Ask a question
+curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is the main topic?", "top_k": 3}'
 
-# Ingest from directory
-ingest_documents("data/")
+# Ingest documents
+curl -X POST http://localhost:8000/ingest/sync \
+  -H "Content-Type: application/json" \
+  -d '{"path": "data/"}'
 
-# Or ingest a single file
-ingest_documents("data/document.pdf")
-```
-
-### Full RAG Chain
-
-```python
-from retrieval import get_retriever
-from llm import get_rag_chain
-
-# Initialize
-retriever = get_retriever(top_k=3)
-rag_chain = get_rag_chain()
-
-# Query
-query = "What is machine learning?"
-documents = retriever.retrieve_text_only(query)
-answer = rag_chain.generate_answer(query, documents)
-print(answer)
+# Health check
+curl http://localhost:8000/health
 ```
 
 ## 🧪 Testing
 
-Run example scripts:
+Test the system with sample documents:
 
 ```bash
-# Example: Document ingestion
-python examples.py ingest
+# Sample documents are included in data/
+# They are automatically processed when you start the app
 
-# Example: Document retrieval
-python examples.py retrieve
+# Test via API
+curl http://localhost:8000/health
 
-# Example: Full RAG chain
-python examples.py rag
+# Test via Streamlit
+# Go to http://localhost:8501 and ask a question
 ```
 
-## 📊 System Architecture
+## 📁 Project Structure
 
 ```
-User Input (UI/API)
-        ↓
-    Router
-        ↓
-    Retriever ← Vector Store (FAISS)
-        ↓      ↗
-   Documents
-        ↓
-  RAG Chain
-        ↓
-   LLM Provider
-        ↓
-    Response
+pdf_reader_rag_implementation/
+├── Core Application
+│   ├── app.py                 # FastAPI backend
+│   ├── ui.py                  # Streamlit frontend
+│   └── config.py              # Configuration settings
+│
+├── Document Processing
+│   ├── document_loader.py     # Load PDF, TXT, MD files
+│   ├── text_processor.py      # Chunk and process text
+│   └── ingest.py              # Document ingestion pipeline
+│
+├── AI Components
+│   ├── embedding.py           # Embeddings and vector store (FAISS)
+│   ├── retrieval.py           # Document retrieval
+│   └── llm.py                 # LLM providers (HuggingFace, OpenAI, Ollama)
+│
+├── Utilities
+│   ├── logger.py              # Logging configuration
+│   ├── utils.py               # Helper functions
+│   └── requirements.txt       # Python dependencies
+│
+└── Data & Logs
+    ├── data/                  # Sample documents
+    ├── vector_store/          # FAISS index and metadata
+    ├── logs/                  # Application logs
+    └── uploaded_docs/         # User-uploaded documents
 ```
 
 ## 🔍 How RAG Works
 
-1. **Ingestion**: Documents are loaded, chunked, and converted to embeddings
-2. **Storage**: Embeddings are stored in FAISS for fast similarity search
-3. **Retrieval**: User query is converted to embedding and matched against document embeddings
-4. **Generation**: Retrieved documents are provided as context to an LLM
-5. **Response**: LLM generates answer grounded in the retrieved documents
+1. **Ingestion**: Documents are loaded, split into chunks, and converted to embeddings
+2. **Storage**: Embeddings stored in FAISS vector database for fast retrieval
+3. **Query**: User question is converted to embedding
+4. **Retrieval**: Similar document chunks are found using vector similarity
+5. **Generation**: Retrieved chunks are passed as context to the LLM
+6. **Response**: LLM generates an answer grounded in the documents
 
 ## 🛠️ Troubleshooting
 
-### Vector Store Not Found
+### Common Issues
+
+**Q: Application won't start**
+- Ensure Python 3.8+ is installed
+- Install all dependencies: `pip install -r requirements.txt`
+- Check port availability (8000, 8501)
+
+**Q: "No documents found"**
+- Place documents in `data/` directory
+- Supported formats: PDF, TXT, Markdown
+- Restart the application after adding documents
+
+**Q: "LLM Error" or slow responses**
+- HuggingFace model loads slowly on first use (normal)
+- For faster responses, use OpenAI: `export LLM_TYPE=openai`
+- Check available memory (model requires ~500MB)
+
+**Q: Vector store issues**
+- Delete `vector_store/` directory to reset
+- Re-ingest documents from the UI or API
+- Check that `data/` contains documents
+
+### Check Logs
+
 ```bash
-# Ensure documents are ingested first
-python ingest.py --source data/
+# View application logs
+tail -f logs/rag.log
+
+# Clear logs
+rm logs/rag.log
 ```
-
-### API Connection Error
-```bash
-# Check if API server is running
-curl http://localhost:8000/health
-```
-
-### Ollama Connection Error
-```bash
-# Start Ollama service
-ollama serve
-
-# Or change LLM_TYPE in config.py
-```
-
-### Out of Memory
-- Reduce `CHUNK_SIZE` in config.py
-- Use a smaller embedding model
-- Reduce `TOP_K_RESULTS`
 
 ## 🚀 Deployment
 
-### Docker
+### Using Docker
 
-```dockerfile
-FROM python:3.11-slim
+```bash
+# Build image
+docker build -t rag-system .
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY . .
-
-EXPOSE 8000 8501
-
-CMD ["sh", "-c", "python -m uvicorn app:app --host 0.0.0.0 --port 8000 & streamlit run ui.py --server.port 8501"]
+# Run container
+docker run -p 8000:8000 -p 8501:8501 \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/vector_store:/app/vector_store \
+  rag-system
 ```
 
 ### Environment Variables
 
 ```bash
 # LLM Configuration
-LLM_TYPE=ollama  # or openai, huggingface
+LLM_TYPE=huggingface              # or openai, ollama (default: huggingface)
+OPENAI_API_KEY=sk-...             # Required if using OpenAI
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=mistral
-OPENAI_API_KEY=sk-...
 
 # API Configuration
 API_HOST=0.0.0.0
@@ -333,27 +358,59 @@ LOG_LEVEL=INFO
 
 ## 📈 Performance Tips
 
-1. **Batch ingestion**: Ingest multiple documents at once
-2. **Tune TOP_K**: Find optimal number of retrieved documents (usually 3-5)
-3. **Cache embeddings**: Already embedded in vector store
-4. **Use GPU**: Set environment variable for GPU acceleration
-5. **Monitor logs**: Check `logs/rag.log` for performance insights
+- **Batch Processing**: Upload multiple documents at once
+- **Tune TOP_K**: Optimal is usually 3-5 documents
+- **Monitor Memory**: First LLM load caches the model
+- **Check Logs**: Review `logs/rag.log` for performance insights
 
-## 🔐 Security Notes
+## � API Endpoints
 
-- Store API keys in environment variables (use `.env` file)
-- Don't commit `.env` to version control
-- Validate input in production
-- Use HTTPS for remote deployments
-- Implement authentication for production APIs
+### Health Check
+```bash
+GET /health
+# Returns API status and version
+```
+
+### Ask Question
+```bash
+POST /ask
+{
+  "question": "What is machine learning?",
+  "top_k": 3
+}
+```
+
+### Ingest Documents (Async)
+```bash
+POST /ingest
+{
+  "path": "data/"
+}
+```
+
+### Ingest Documents (Sync)
+```bash
+POST /ingest/sync
+{
+  "path": "data/"
+}
+# Waits for completion
+```
 
 ## 📝 License
 
 MIT
 
-## 🤝 Contributing
+## 🤝 Support & Feedback
 
-Feel free to submit issues and pull requests!
+- **Issues**: Check troubleshooting section first
+- **Logs**: Review `logs/rag.log` for detailed information
+- **API Docs**: Visit http://localhost:8000/docs for interactive documentation
+- **Questions**: Refer to the examples and configuration guide
+
+---
+
+**Status**: ✅ Ready for Production | **Last Updated**: January 2026
 
 ## 📞 Support
 

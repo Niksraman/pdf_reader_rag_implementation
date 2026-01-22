@@ -2,7 +2,7 @@
 """
 Retrieval module - search and retrieve documents
 """
-from typing import List, Dict, Any
+from typing import List
 import numpy as np
 from embedding import EmbeddingManager, VectorStore
 from config import TOP_K_RESULTS
@@ -41,7 +41,7 @@ class Retriever:
             logger.error(f"Error loading vector store: {str(e)}")
             return False
     
-    def retrieve(self, query: str, top_k: int = None) -> List[Dict[str, Any]]:
+    def retrieve(self, query: str, top_k: int = None) -> List[dict]:
         """
         Retrieve top-k relevant documents for a query
         

@@ -23,8 +23,8 @@ CHUNK_OVERLAP = 100
 TOP_K_RESULTS = 3
 
 
-# LLM configuration (default: Ollama)
-LLM_TYPE = os.getenv("LLM_TYPE", "ollama")  # ollama, openai, or huggingface
+# LLM configuration (default: HuggingFace for local use)
+LLM_TYPE = os.getenv("LLM_TYPE", "huggingface")  # ollama, openai, or huggingface
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "mistral")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")

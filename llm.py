@@ -110,24 +110,35 @@ class OpenAIProvider(LLMProvider):
             raise
 
 class HuggingFaceProvider(LLMProvider):
-    """HuggingFace LLM provider"""
+    """HuggingFace LLM provider with lightweight fallback models"""
     
-    def __init__(self, model: str = "meta-llama/Llama-2-7b-chat-hf"):
+    def __init__(self, model: str = None):
         """
-        Initialize HuggingFace provider
+        Initialize HuggingFace provider with fallback to lightweight models
         
         Args:
-            model: Model name from HuggingFace
+            model: Model name from HuggingFace (optional, will use distilgpt2 by default)
         """
-        from transformers import pipeline
-        
         try:
-            self.model = model
-            self.pipeline = pipeline("text-generation", model=model, device=0)
-            logger.info(f"Initialized HuggingFaceProvider with model: {model}")
+            from transformers import pipeline
+            
+            self.model = model or "distilgpt2"
+            logger.info(f"Loading HuggingFace model: {self.model}")
+            
+            # Load with CPU explicitly
+            self.pipeline = pipeline("text-generation", model=self.model, device=-1)
+            logger.info(f"Successfully initialized HuggingFaceProvider with model: {self.model}")
         except Exception as e:
-            logger.error(f"Error initializing HuggingFace: {str(e)}")
-            raise
+            logger.warning(f"Failed to load {self.model}: {str(e)}")
+            try:
+                logger.info("Attempting to load fallback model: distilgpt2")
+                from transformers import pipeline
+                self.pipeline = pipeline("text-generation", model="distilgpt2", device=-1)
+                self.model = "distilgpt2"
+                logger.info(f"Successfully loaded fallback model: distilgpt2")
+            except Exception as fallback_e:
+                logger.error(f"Failed to load fallback model: {str(fallback_e)}")
+                self.pipeline = None
     
     def generate(self, prompt: str) -> str:
         """
@@ -181,10 +192,19 @@ def generate_answer(question: str, documents: List[dict]) -> str:
     """
     try:
         llm = get_llm_provider()
-        context = "\n\n".join([doc.get("content", doc) for doc in documents])
+        # Handle both dict and string document formats
+        context_parts = []
+        for doc in documents:
+            if isinstance(doc, dict):
+                content = doc.get("content", str(doc))
+            else:
+                content = str(doc)
+            context_parts.append(content)
+        context = "\n\n".join(context_parts)
+        
         prompt = f"""You are an expert assistant. Use ONLY the following context to answer the question.
 
-Context:
+Context from documents:
 {context}
 
 Question: {question}

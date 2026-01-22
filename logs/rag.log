@@ -68,3 +68,307 @@
 2026-01-20 17:47:51 - llm - INFO - Initialized OllamaProvider with model: mistral
 2026-01-20 17:47:51 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
 2026-01-20 17:47:51 - app - INFO - Generated answer (24 chars) with 3 sources
+2026-01-20 18:08:28 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-20 18:09:00 - __main__ - INFO - Processing question: what are the benefits of machine learning
+2026-01-20 18:09:09 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-20 18:09:09 - embedding - INFO - Initialized VectorStore
+2026-01-20 18:09:09 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-20 18:09:09 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-20 18:09:09 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-20 18:09:09 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-20 18:09:09 - embedding - INFO - Search returned 3 results
+2026-01-20 18:09:09 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 18:09:09 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 18:09:09 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 18:09:09 - __main__ - INFO - Generated answer (24 chars) with 3 sources
+2026-01-20 18:09:09 - __main__ - INFO - Processing question: what are the benefits of machine learning
+2026-01-20 18:09:09 - embedding - INFO - Search returned 3 results
+2026-01-20 18:09:09 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 18:09:09 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 18:09:09 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 18:09:09 - __main__ - INFO - Generated answer (24 chars) with 3 sources
+2026-01-20 18:09:15 - __main__ - INFO - Processing question: Can you summarize the key points?
+2026-01-20 18:09:15 - embedding - INFO - Search returned 3 results
+2026-01-20 18:09:15 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-20 18:09:15 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-20 18:09:15 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-20 18:09:15 - __main__ - INFO - Generated answer (24 chars) with 3 sources
+2026-01-21 16:53:42 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 16:54:12 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 16:55:01 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 16:55:02 - embedding - INFO - Initialized VectorStore
+2026-01-21 16:55:02 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 16:55:02 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 16:55:02 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 16:55:02 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 16:55:05 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:05 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:05 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:05 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:05 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:55:05 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 16:55:05 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:05 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:05 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:05 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:05 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:55:05 - __main__ - INFO - Processing question: What is the main topic?
+2026-01-21 16:55:05 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:05 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:05 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:05 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:05 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:55:07 - __main__ - INFO - Processing question: What is the main topic?
+2026-01-21 16:55:07 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:07 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:07 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:07 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:07 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:55:08 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 16:55:08 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:08 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:08 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:08 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:08 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:55:10 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 16:55:10 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:10 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:10 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:10 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:10 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:55:23 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 16:55:23 - embedding - INFO - Search returned 3 results
+2026-01-21 16:55:23 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:55:23 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:55:23 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:55:23 - __main__ - INFO - Generated answer (185 chars) with 3 sources
+2026-01-21 16:56:08 - llm - INFO - Initialized OllamaProvider with model: mistral
+2026-01-21 16:56:08 - llm - ERROR - Error generating response from Ollama: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-01-21 16:56:08 - llm - ERROR - Error generating answer: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+2026-01-21 16:56:51 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 16:57:00 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 16:57:00 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 16:57:09 - llm - INFO - Generated response (1143 chars)
+2026-01-21 16:57:30 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 16:58:07 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 16:58:16 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 16:58:16 - embedding - INFO - Initialized VectorStore
+2026-01-21 16:58:16 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 16:58:16 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 16:58:16 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 16:58:16 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 16:58:16 - embedding - INFO - Search returned 3 results
+2026-01-21 16:58:16 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:58:16 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 16:58:18 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 16:58:18 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:58:18 - __main__ - INFO - Generated answer (168 chars) with 3 sources
+2026-01-21 16:58:43 - __main__ - INFO - Processing question: what are the benefits of machine learning
+
+2026-01-21 16:58:43 - embedding - INFO - Search returned 3 results
+2026-01-21 16:58:43 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:58:43 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 16:58:45 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 16:58:45 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:58:45 - __main__ - INFO - Generated answer (186 chars) with 3 sources
+2026-01-21 16:59:15 - __main__ - INFO - Processing question: what are latest technology in machine learning
+
+2026-01-21 16:59:16 - embedding - INFO - Search returned 3 results
+2026-01-21 16:59:16 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 16:59:16 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 16:59:17 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 16:59:17 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-21 16:59:17 - __main__ - INFO - Generated answer (191 chars) with 3 sources
+2026-01-21 17:00:46 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 17:01:24 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 17:01:32 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 17:01:32 - embedding - INFO - Initialized VectorStore
+2026-01-21 17:01:32 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 17:01:32 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 17:01:32 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 17:01:32 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 17:01:32 - embedding - INFO - Search returned 3 results
+2026-01-21 17:01:32 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 17:01:32 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 17:01:34 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 17:01:34 - llm - INFO - Generating answer for question: what is machine learning...
+2026-01-21 17:01:34 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 17:01:43 - llm - INFO - Generated response (1578 chars)
+2026-01-21 17:01:43 - llm - INFO - Generated answer (360 chars)
+2026-01-21 17:01:43 - __main__ - INFO - Generated answer (360 chars) with 3 sources
+2026-01-21 18:10:55 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 18:11:27 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 18:12:21 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 18:12:22 - embedding - INFO - Initialized VectorStore
+2026-01-21 18:12:22 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 18:12:22 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 18:12:22 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 18:12:22 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 18:12:26 - embedding - INFO - Search returned 3 results
+2026-01-21 18:12:26 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:12:26 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:12:32 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:12:32 - llm - INFO - Generating answer for question: what is machine learning...
+2026-01-21 18:12:32 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:13:03 - llm - INFO - Generated response (1570 chars)
+2026-01-21 18:13:03 - llm - INFO - Generated answer (106 chars)
+2026-01-21 18:13:03 - __main__ - INFO - Generated answer (106 chars) with 3 sources
+2026-01-21 18:13:03 - __main__ - INFO - Processing question: What is the main topic?
+2026-01-21 18:13:03 - embedding - INFO - Search returned 3 results
+2026-01-21 18:13:03 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:13:03 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:13:05 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:13:05 - llm - INFO - Generating answer for question: What is the main topic?...
+2026-01-21 18:13:05 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:13:13 - llm - INFO - Generated response (815 chars)
+2026-01-21 18:13:13 - llm - INFO - Generated answer (186 chars)
+2026-01-21 18:13:13 - __main__ - INFO - Generated answer (186 chars) with 3 sources
+2026-01-21 18:13:13 - __main__ - INFO - Processing question: What is the main topic?
+2026-01-21 18:13:13 - embedding - INFO - Search returned 3 results
+2026-01-21 18:13:13 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:13:13 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:13:15 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:13:15 - llm - INFO - Generating answer for question: What is the main topic?...
+2026-01-21 18:13:15 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:13:23 - llm - INFO - Generated response (964 chars)
+2026-01-21 18:13:23 - llm - INFO - Generated answer (186 chars)
+2026-01-21 18:13:23 - __main__ - INFO - Generated answer (186 chars) with 3 sources
+2026-01-21 18:13:23 - __main__ - INFO - Processing question: What is the main topic?
+2026-01-21 18:13:23 - embedding - INFO - Search returned 3 results
+2026-01-21 18:13:23 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:13:23 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:13:24 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:13:24 - llm - INFO - Generating answer for question: What is the main topic?...
+2026-01-21 18:13:24 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:13:32 - llm - INFO - Generated response (1451 chars)
+2026-01-21 18:13:32 - llm - INFO - Generated answer (33 chars)
+2026-01-21 18:13:32 - __main__ - INFO - Generated answer (33 chars) with 3 sources
+2026-01-21 18:13:32 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 18:13:32 - embedding - INFO - Search returned 3 results
+2026-01-21 18:13:32 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:13:32 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:13:34 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:13:34 - llm - INFO - Generating answer for question: what is machine learning...
+2026-01-21 18:13:34 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:13:42 - llm - INFO - Generated response (1356 chars)
+2026-01-21 18:13:42 - llm - INFO - Generated answer (209 chars)
+2026-01-21 18:13:42 - __main__ - INFO - Generated answer (209 chars) with 3 sources
+2026-01-21 18:17:37 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 18:18:07 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 18:18:16 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 18:18:16 - embedding - INFO - Initialized VectorStore
+2026-01-21 18:18:16 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 18:18:16 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 18:18:16 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 18:18:16 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 18:18:16 - embedding - INFO - Search returned 3 results
+2026-01-21 18:18:16 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:18:16 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:18:18 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:18:18 - llm - INFO - Generating answer for question: what is machine learning...
+2026-01-21 18:18:18 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:18:26 - llm - INFO - Generated response (1324 chars)
+2026-01-21 18:18:26 - llm - INFO - Generated answer (72 chars)
+2026-01-21 18:18:26 - __main__ - INFO - Generated answer (72 chars) with 3 sources
+2026-01-21 18:24:13 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 18:24:40 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 18:24:48 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 18:24:48 - embedding - INFO - Initialized VectorStore
+2026-01-21 18:24:48 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 18:24:48 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 18:24:48 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 18:24:48 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 18:24:48 - embedding - INFO - Search returned 3 results
+2026-01-21 18:24:48 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:24:48 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:24:50 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:24:50 - llm - INFO - Generating answer for question: what is machine learning...
+2026-01-21 18:24:50 - llm - INFO - Generating with model distilgpt2, prompt length: 200
+2026-01-21 18:24:58 - llm - INFO - Generated response (1037 chars)
+2026-01-21 18:24:58 - llm - INFO - Generated answer (11 chars)
+2026-01-21 18:24:58 - __main__ - INFO - Generated answer (11 chars) with 3 sources
+2026-01-21 18:27:51 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-21 18:28:20 - __main__ - INFO - Processing question: what is machine learning
+2026-01-21 18:28:28 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-21 18:28:28 - embedding - INFO - Initialized VectorStore
+2026-01-21 18:28:28 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-21 18:28:28 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-21 18:28:28 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-21 18:28:28 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-21 18:28:28 - embedding - INFO - Search returned 3 results
+2026-01-21 18:28:28 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-21 18:28:28 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-21 18:28:30 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-21 18:28:30 - llm - INFO - Generating answer for question: what is machine learning...
+2026-01-21 18:28:30 - llm - INFO - Generating with model distilgpt2, prompt length: 1042
+2026-01-21 18:28:39 - llm - INFO - Generated response (1420 chars)
+2026-01-21 18:28:39 - llm - INFO - Generated answer (1420 chars)
+2026-01-21 18:28:39 - __main__ - INFO - Generated answer (1420 chars) with 3 sources
+2026-01-22 01:34:34 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-22 01:35:03 - __main__ - INFO - Processing question: what is machine learning
+2026-01-22 01:35:46 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-22 01:35:47 - embedding - INFO - Initialized VectorStore
+2026-01-22 01:35:47 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-22 01:35:47 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-22 01:35:47 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-22 01:35:47 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-22 01:35:49 - embedding - INFO - Search returned 3 results
+2026-01-22 01:35:49 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-22 01:35:50 - llm - ERROR - Error initializing HuggingFace: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/meta-llama/Llama-2-7b-chat-hf.
+401 Client Error. (Request ID: Root=1-69717ef6-78784f9b1d5ecc7370c7f2ed;7e0f7281-c2f8-4d11-a88c-566f024e0a6b)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/resolve/main/config.json.
+Access to model meta-llama/Llama-2-7b-chat-hf is restricted. You must have access to it and be authenticated to access it. Please log in.
+2026-01-22 01:35:50 - llm - ERROR - Error generating answer: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/meta-llama/Llama-2-7b-chat-hf.
+401 Client Error. (Request ID: Root=1-69717ef6-78784f9b1d5ecc7370c7f2ed;7e0f7281-c2f8-4d11-a88c-566f024e0a6b)
+
+Cannot access gated repo for url https://huggingface.co/meta-llama/Llama-2-7b-chat-hf/resolve/main/config.json.
+Access to model meta-llama/Llama-2-7b-chat-hf is restricted. You must have access to it and be authenticated to access it. Please log in.
+2026-01-22 01:35:50 - __main__ - INFO - Generated answer (24 chars) with 3 sources
+2026-01-22 01:37:02 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-22 01:37:34 - __main__ - INFO - Processing question: what is machine learning
+
+2026-01-22 01:37:44 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-22 01:37:44 - embedding - INFO - Initialized VectorStore
+2026-01-22 01:37:44 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-22 01:37:44 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-22 01:37:44 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-22 01:37:44 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-22 01:37:44 - embedding - INFO - Search returned 3 results
+2026-01-22 01:37:44 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-22 01:37:44 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-22 01:37:49 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-22 01:37:49 - llm - ERROR - Error generating answer: 'str' object has no attribute 'get'
+2026-01-22 01:37:49 - __main__ - INFO - Generated answer (24 chars) with 3 sources
+2026-01-22 01:40:56 - __main__ - INFO - Starting RAG API server on 127.0.0.1:8000
+2026-01-22 01:41:34 - __main__ - INFO - Processing question: what is amchine learning
+2026-01-22 01:41:42 - embedding - INFO - Initialized EmbeddingManager with model: sentence-transformers/all-MiniLM-L6-v2
+2026-01-22 01:41:42 - embedding - INFO - Initialized VectorStore
+2026-01-22 01:41:42 - retrieval - INFO - Initialized Retriever with top_k=3
+2026-01-22 01:41:42 - embedding - INFO - Loaded vector store from /workspaces/pdf_reader_rag_implementation/vector_store/vector_store.pkl
+2026-01-22 01:41:42 - embedding - INFO - Loaded 41 documents from /workspaces/pdf_reader_rag_implementation/vector_store/metadata.pkl
+2026-01-22 01:41:42 - retrieval - INFO - Loaded 41 documents from vector store
+2026-01-22 01:41:42 - embedding - INFO - Search returned 3 results
+2026-01-22 01:41:42 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-22 01:41:42 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-22 01:41:44 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-22 01:42:11 - llm - INFO - Generated response from HuggingFace (2388 chars)
+2026-01-22 01:42:11 - __main__ - INFO - Generated answer (2388 chars) with 3 sources
+2026-01-22 01:42:52 - __main__ - INFO - Processing question: what is machine ;earning
+
+2026-01-22 01:42:53 - embedding - INFO - Search returned 3 results
+2026-01-22 01:42:53 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-22 01:42:53 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-22 01:42:54 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-22 01:43:02 - llm - INFO - Generated response from HuggingFace (2666 chars)
+2026-01-22 01:43:02 - __main__ - INFO - Generated answer (2666 chars) with 3 sources
+2026-01-22 01:43:11 - __main__ - INFO - Processing question: what is machine ;earning
+
+2026-01-22 01:43:11 - embedding - INFO - Search returned 3 results
+2026-01-22 01:43:11 - retrieval - INFO - Retrieved 3 documents for query
+2026-01-22 01:43:11 - llm - INFO - Loading HuggingFace model: distilgpt2
+2026-01-22 01:43:13 - llm - INFO - Successfully initialized HuggingFaceProvider with model: distilgpt2
+2026-01-22 01:43:21 - llm - INFO - Generated response from HuggingFace (2430 chars)
+2026-01-22 01:43:21 - __main__ - INFO - Generated answer (2430 chars) with 3 sources
